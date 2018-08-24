@@ -165,7 +165,7 @@ def train(args):
                         if model_name in f:
                             os.remove(os.path.join(args.save_dir, f))
                     # save for the last result
-                    checkpoint_path = os.path.join(args.save_dir, model_name)
+                    checkpoint_path = os.path.join(args.save_dir, 'model.ckpt')
                     saver.save(sess, checkpoint_path, global_step=e * data_loader.num_batches + b)
                     final_model = '{}-{}'.format(model_name, e * data_loader.num_batches + b)
                     print("Model saved to {}!".format(checkpoint_path))
